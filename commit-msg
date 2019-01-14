@@ -1,0 +1,43 @@
+#!/bin/sh
+
+if ! grep -Eq "^(work|feature|fix|refactor|doc|test|chore|style|revert):\s*\w+" "$1"; then
+  exec < /dev/tty
+
+  while true; do
+    echo "Please choose a commit type(input 1~9)"
+    echo "1) work(Work in progress)"
+    echo "2) feature(New feature)"
+    echo "3) fix(bug Fix)"
+    echo "4) refactor(A code change that neither fixes a bug nor adds a feature)"
+    echo "5) doc(Documentation only changes)"
+    echo "6) test(Add missing tests or correcting existing tests)"
+    echo "7) chore(Changes that don\'t modify src or test files. Such as updating build tasks, package manager)"
+    echo "8) style(Code Style, Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+    echo "9) revert(Revert to a commit)"
+    read -p "" type
+    case $type in
+        [1] ) prefix="work"; break;;
+        [2] ) prefix="feature"; break;;
+        [3] ) prefix="fix"; break;;
+        [4] ) prefix="refactor"; break;;
+        [5] ) prefix="doc"; break;;
+        [6] ) prefix="test"; break;;
+        [7] ) prefix="chore"; break;;
+        [8] ) prefix="style"; break;;
+        [9] ) prefix="revert"; break;;
+    esac
+  done
+  while true;do
+    echo "Please input commit title"
+    read -p "" title
+    if [ ! -n "$title" ]; then
+      continue
+    fi
+    echo "Please input commit description(optional)"
+    read -p "" desc
+    git commit -n -m "$prefix:$title" -m "$desc"
+    break;
+  done
+fi
+
+exit

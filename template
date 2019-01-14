@@ -1,0 +1,34 @@
+# commit format:
+# <type>:<title>
+# [description]
+#
+# config template: git config [--global] commit.template <file path>
+# use template: remove one of following comments
+
+# work in progress
+#work:
+
+# new feature"
+#feature:
+
+# bug Fix"
+#fix:
+
+# A code change that neither fixes a bug nor adds a feature"
+#refactor:
+
+# Documentation only changes"
+#doc:
+
+# Add missing tests or correcting existing tests"
+#test:
+
+# Changes that don\'t modify src or test files. Such as updating build tasks, package manager"
+#chore:
+
+# Code Style, Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc"
+#style:
+
+# Revert to a commit"
+#revert:
+
