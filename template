@@ -8,27 +8,29 @@
 # work in progress
 #work:
 
-# new feature"
+# new feature
 #feature:
 
-# bug Fix"
+# bug Fix
 #fix:
 
-# A code change that neither fixes a bug nor adds a feature"
+# A code change that neither fixes a bug nor adds a feature
 #refactor:
 
-# Documentation only changes"
+# Documentation only changes
 #doc:
 
-# Add missing tests or correcting existing tests"
+# Add missing tests or correcting existing tests
 #test:
 
-# Changes that don\'t modify src or test files. Such as updating build tasks, package manager"
+# Changes that don\'t modify src or test files. Such as updating build tasks, package manager
 #chore:
 
-# Code Style, Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc"
+# Code Style, Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc
 #style:
 
-# Revert to a commit"
+# Revert to a commit
 #revert:
 
+# Merge a branch
+#merge:

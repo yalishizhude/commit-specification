@@ -1,19 +1,20 @@
 #!/bin/sh
 
-if ! grep -Eq "^(work|feature|fix|refactor|doc|test|chore|style|revert):\s*\w+" "$1"; then
+if ! grep -Eq "^(work|feature|fix|refactor|doc|test|chore|style|revert|merge):\s*\w+" "$1"; then
   exec < /dev/tty
 
   while true; do
     echo "Please choose a commit type(input 1~9)"
     echo "1) work(Work in progress)"
     echo "2) feature(New feature)"
-    echo "3) fix(bug Fix)"
+    echo "3) fix(Bug Fix)"
     echo "4) refactor(A code change that neither fixes a bug nor adds a feature)"
     echo "5) doc(Documentation only changes)"
     echo "6) test(Add missing tests or correcting existing tests)"
     echo "7) chore(Changes that don\'t modify src or test files. Such as updating build tasks, package manager)"
     echo "8) style(Code Style, Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
     echo "9) revert(Revert to a commit)"
+    echo "10) merge(Merge a branch)"
     read -p "" type
     case $type in
         [1] ) prefix="work"; break;;
@@ -25,6 +26,7 @@ if ! grep -Eq "^(work|feature|fix|refactor|doc|test|chore|style|revert):\s*\w+" 
         [7] ) prefix="chore"; break;;
         [8] ) prefix="style"; break;;
         [9] ) prefix="revert"; break;;
+        [10] ) prefix="merge"; break;;
     esac
   done
   while true;do
